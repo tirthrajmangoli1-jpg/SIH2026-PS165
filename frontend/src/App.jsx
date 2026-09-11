@@ -187,6 +187,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-amber-100 selection:text-amber-900 font-sans antialiased">
+      <GovtTicker />
       {/* Toast Notification */}
       {notification && (
         <div className="fixed bottom-6 right-6 z-50 animate-bounce">
@@ -232,6 +233,10 @@ export default function App() {
           <PatternDashboard
             patterns={patterns}
             onSelectTheme={(theme) => console.log(theme)}
+            onSelectIncidentId={(id) => {
+              const inc = incidents.find(i => i.id === id);
+              if (inc) setSelectedIncident(inc);
+            }}
           />
         )}
       </main>

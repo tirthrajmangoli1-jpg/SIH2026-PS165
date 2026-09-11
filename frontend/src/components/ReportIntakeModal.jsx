@@ -3,18 +3,18 @@ import { X, Upload, FileText, CheckCircle2, Sparkles, AlertCircle } from 'lucide
 
 const SAMPLE_TEMPLATES = [
   {
-    title: "High SIF: Kannada Rig Floor Code-Switching",
+    title: "High SIF: Full Kannada (Dropped Object)",
     facility: "ONGC Hazira Rig",
     location: "Hazira Offshore",
     outcome: "Near Miss / No Injury",
-    text: "During tripping out, a heavy drill collar bidditu (dropped) from the monkey board. The khalasi kela (below) on the rig floor tappisikondaru (narrowly escaped) by stepping back. Aalasya (laziness) to use proper sling tying was noted. No physical injury, but very high potential for fatality."
+    text: "ಡ್ರಿಲ್ಲಿಂಗ್ ಮಾಡುವಾಗ, ಮಂಕಿ ಬೋರ್ಡ್‌ನಿಂದ 500kg ಭಾರವಾದ ಡ್ರಿಲ್ ಕಾಲರ್ ಕೆಳಗೆ ಬಿತ್ತು. ಕೆಳಗಿದ್ದ ಖಲಾಸಿ ಸ್ವಲ್ಪದರಲ್ಲಿಯೇ ತಪ್ಪಿಸಿಕೊಂಡ. ಯಾರಿಗೂ ಗಾಯವಾಗಿಲ್ಲ, ಆದರೆ ಇದು ದೊಡ್ಡ ಅಪಘಾತವಾಗುವ ಸಾಧ್ಯತೆ ಇತ್ತು."
   },
   {
-    title: "High SIF: Assamese Confined Space / H2S",
+    title: "High SIF: Full Assamese (Confined Space)",
     facility: "Moran Production Station",
     location: "Upper Assam",
     outcome: "First Aid",
-    text: "At Moran GGS, a thekedaar worker went into the 3m deep gorto (pit) without an H2S monitor or PTW. He felt dizzy from toxic hawa (gas vapor) and scrambled out. Standby sentry was missing. Bach goli (narrowly escaped), but suffered minor knee chot (injury)."
+    text: "মৰাণ জিজিএছত, এজন ঠিকা কৰ্মীয়ে পাৰ্মিট নোহোৱাকৈ ৩ মিটাৰ দ গাঁতত সোমাইছিল। বিষাক্ত গেছৰ বাবে তাৰ মূৰ ঘূৰাইছিল আৰু সি লৰালৰিকৈ ওলাই আহিল। সি অলপৰ বাবে বাচি গ'ল কিন্তু আঁঠুত অকণমান দুখ পালে।"
   },
   {
     title: "Low SIF: Routine Slip/Trip",

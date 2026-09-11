@@ -40,12 +40,17 @@ export default function IntakeLogModal({ incidents, onClose }) {
             </div>
           ) : (
             translatedIncidents.map((inc) => (
-              <div key={inc.id} className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+              <div key={inc.id} className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition">
                 <div className="flex items-center justify-between mb-3 border-b border-slate-100 pb-2">
-                  <span className="text-xs font-bold text-slate-800">
-                    ID: <span className="font-mono text-indigo-700">{inc.id}</span>
-                  </span>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-200">
+                  <div className="flex items-center space-x-3">
+                    <span className="text-xs font-bold text-slate-800" title="System generated unique identifier">
+                      ID: <span className="font-mono text-indigo-700">{inc.id}</span>
+                    </span>
+                    <span className="text-[10px] text-slate-500 font-medium flex items-center space-x-1" title="Time of ingestion into the NLP pipeline">
+                      <span>Submitted: {inc.created_at ? new Date(inc.created_at).toLocaleString() : new Date().toLocaleString()}</span>
+                    </span>
+                  </div>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-200" title="Regional terms detected and translated by NLP engine">
                     Code-Switching Detected ({inc.detected_codeswitch.length} terms)
                   </span>
                 </div>

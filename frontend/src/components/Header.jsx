@@ -26,12 +26,12 @@ export default function Header({
         <div className="flex flex-wrap items-center justify-between py-2.5 gap-3 min-h-[64px]">
           {/* Brand & Title */}
           <div className="flex items-center space-x-3 shrink-0">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700 flex items-center justify-center shadow-md shadow-amber-500/20 border border-amber-300">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br bg-slate-800 flex items-center justify-center shadow-md ">
               <ShieldAlert className="w-6 h-6 text-white font-black" />
             </div>
             <div>
               <div className="flex items-center space-x-2">
-                <span className="font-black text-lg tracking-tight bg-gradient-to-r from-amber-700 via-amber-600 to-yellow-600 bg-clip-text text-transparent">
+                <span className="font-black text-lg tracking-tight bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
                   OIL SIF-SENTINEL
                 </span>
                 <span className="text-[10px] uppercase font-mono font-bold tracking-wider px-2 py-0.5 rounded bg-amber-100 text-amber-800 border border-amber-300">

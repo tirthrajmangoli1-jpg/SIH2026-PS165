@@ -15,6 +15,15 @@ export default {
           gold: '#f59e0b',
           accent: '#0284c7'
         }
+      },
+      keyframes: {
+        ticker: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' }
+        }
+      },
+      animation: {
+        ticker: 'ticker 25s linear infinite'
       }
     },
   },

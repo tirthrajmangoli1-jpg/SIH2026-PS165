@@ -18,7 +18,7 @@ const BARRIER_COLORS = {
   'Intact / Controlled': '#10b981'
 };
 
-export default function PatternDashboard({ patterns, onSelectTheme }) {
+export default function PatternDashboard({ patterns, onSelectTheme, onSelectIncidentId }) {
   const [rankingTab, setRankingTab] = useState('sites'); // 'sites' or 'activities'
   const [selectedCell, setSelectedCell] = useState(null);
 
@@ -204,7 +204,18 @@ export default function PatternDashboard({ patterns, onSelectTheme }) {
                 <span className="text-amber-900 font-black">Selected Intersection: </span>
                 <span className="font-bold">{selectedCell.energy_level} × {selectedCell.barrier_status} ({selectedCell.incident_count} reports)</span>
               </div>
-              <span className="font-mono text-slate-700 font-bold">Incident IDs: {selectedCell.incident_ids.join(', ')}</span>
+              <div className="font-mono text-slate-700 font-bold flex flex-wrap gap-2 items-center">
+                <span>View Reports:</span>
+                {selectedCell.incident_ids.map(id => (
+                  <button 
+                    key={id}
+                    onClick={() => onSelectIncidentId && onSelectIncidentId(id)}
+                    className="px-2 py-0.5 rounded bg-amber-200 text-amber-900 hover:bg-amber-300 transition underline cursor-pointer"
+                  >
+                    {id}
+                  </button>
+                ))}
+              </div>
             </div>
           )}
         </div>
