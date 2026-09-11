@@ -2,10 +2,6 @@
 
 > *A Neuro-Symbolic Artificial Intelligence engine for decoding high-energy hazard anomalies and predicting Severe Injury & Fatality (SIF) precursors in Oil & Gas operations before they manifest into catastrophic events.*
 
-## 🚨 SIH 2026 PS 165 Update: Real Historical Data
-**We have completely removed all synthetic/fake data.** SIF-Sentinel is now driven by **Real Indian Historical O&G Precursors**. We have taken the exact near-miss events leading up to major Indian tragedies and fed them into our system to demonstrate how they could have been prevented.
-👉 **Please read the full report:** [`sih 2026 ps 165 story and data set collection.md`](./sih%202026%20ps%20165%20story%20and%20data%20set%20collection.md)
-👉 **Run the efficiency report script:** `python generate_report.py` (Achieves 100% predictive efficiency on fatal precursors).
 
 ---
 
