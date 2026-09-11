@@ -146,15 +146,7 @@ export default function Header({
               <span>NLP Intake Log</span>
             </button>
 
-            {/* Vector Store Exemplar Inspector */}
-            <button
-              onClick={onOpenExemplars}
-              title="View Versioned Exemplar Store"
-              className="px-2.5 py-1.5 rounded-lg border border-slate-700 bg-slate-900 hover:bg-slate-800 text-slate-300 font-semibold text-xs flex items-center space-x-1.5 transition shadow-none"
-            >
-              <Database className="w-3.5 h-3.5 text-cyan-600" />
-              <span className="hidden sm:inline">Vector Store</span>
-            </button>
+            
 
             {/* Intake Report Button */}
             <button

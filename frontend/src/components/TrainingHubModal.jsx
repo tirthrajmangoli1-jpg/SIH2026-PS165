@@ -12,7 +12,7 @@ export default function TrainingHubModal({ onClose, onTrainingCompleted }) {
   const [datasetSources, setDatasetSources] = useState([]);
   const [isTraining, setIsTraining] = useState(false);
   const [trainingProgress, setTrainingProgress] = useState(100);
-  const [epochs, setEpochs] = useState(5);
+  const [epochs, setEpochs] = useState(100);
   const [successMsg, setSuccessMsg] = useState(null);
 
   useEffect(() => {
