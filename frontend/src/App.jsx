@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Header from './components/Header';
+import GovtTicker from './components/GovtTicker';
 import AutoProcessingBanner from './components/AutoProcessingBanner';
 import TriageFeed from './components/TriageFeed';
 import ReportDetailModal from './components/ReportDetailModal';
