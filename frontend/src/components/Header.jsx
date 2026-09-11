@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
   ShieldAlert, Activity, Database, Sparkles, RefreshCw, Upload, 
-  BarChart3, ListFilter, ShieldCheck, Radio, Globe, Lock 
+  BarChart3, ListFilter, ShieldCheck, Radio, Globe, Languages 
 } from 'lucide-react';
 
 export default function Header({ 
@@ -135,14 +135,14 @@ export default function Header({
               <span>AI Training & Standards</span>
             </button>
 
-            {/* Security Vault Button */}
+            {/* NLP Translation Log Button */}
             <button
               onClick={onOpenSecurityVault}
-              title="Defense Cryptographic Vault & Merkle Audit Ledger"
-              className="px-3 py-1.5 rounded-lg border border-emerald-300 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-xs flex items-center space-x-1.5 transition shadow-xs"
+              title="View Regional Language to English Translation Pipeline"
+              className="px-3 py-1.5 rounded-lg border border-indigo-300 bg-indigo-50 hover:bg-indigo-100 text-indigo-800 font-bold text-xs flex items-center space-x-1.5 transition shadow-xs"
             >
-              <Lock className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Security Vault</span>
+              <Languages className="w-3.5 h-3.5 text-indigo-600" />
+              <span>NLP Intake Log</span>
             </button>
 
             {/* Vector Store Exemplar Inspector */}

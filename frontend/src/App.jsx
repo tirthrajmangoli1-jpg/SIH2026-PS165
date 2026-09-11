@@ -7,7 +7,7 @@ import ReviewerModal from './components/ReviewerModal';
 import PatternDashboard from './components/PatternDashboard';
 import ReportIntakeModal from './components/ReportIntakeModal';
 import ExemplarStoreModal from './components/ExemplarStoreModal';
-import SecurityVaultModal from './components/SecurityVaultModal';
+import IntakeLogModal from './components/IntakeLogModal';
 import TrainingHubModal from './components/TrainingHubModal';
 
 import { 
@@ -269,9 +269,10 @@ export default function App() {
         />
       )}
 
-      {/* Security & Cryptographic Vault Modal */}
+      {/* NLP Translation Intake Log Modal */}
       {showSecurityModal && (
-        <SecurityVaultModal
+        <IntakeLogModal
+          incidents={incidents}
           onClose={() => setShowSecurityModal(false)}
         />
       )}
