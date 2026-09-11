@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  X, ShieldAlert, Cpu, AlertTriangle, CheckCircle2, UserCheck, 
+  X, ShieldAlert, Download, Cpu, AlertTriangle, CheckCircle2, UserCheck, 
   Languages, Zap, FileText, Info, Flame, Eye, Lock, ArrowRight, Activity 
 } from 'lucide-react';
 
