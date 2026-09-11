@@ -76,9 +76,9 @@ export default function ReportDetailModal({ incident, onClose, onOpenReview }) {
                 }`}>
                   {incident.sif_potential_category} (Score: {incident.stage_b_score.toFixed(2)})
                 </span>
-                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">
+                <button onClick={(e) => { e.stopPropagation(); onOpenContext && onOpenContext(incident); }} title="Click to view historical authenticity" className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 cursor-pointer transition">
                   {incident.dataset_source || "OIL Upper Assam"}
-                </span>
+                </button>
               </div>
               <p className="text-xs text-slate-500 font-medium mt-0.5">
                 {incident.facility} · {incident.location} · Reported: {incident.date_reported}
@@ -374,21 +374,36 @@ export default function ReportDetailModal({ incident, onClose, onOpenReview }) {
             </div>
           )}
 
-          {/* Review Decision Audit Trail */}
-          {incident.review_status !== 'Pending Review' && (
-            <div className="bg-slate-50 border border-blue-200 rounded-2xl p-4.5 text-xs space-y-1 shadow-2xs">
-              <span className="text-blue-900 font-black block">Safety Officer Review Record:</span>
-              <p className="text-slate-800 font-medium">
-                Reviewer: <strong>{incident.reviewer_name}</strong> · Decision: <strong className="text-slate-950 font-bold">{incident.review_status}</strong>
-              </p>
-              {incident.reviewer_notes && (
-                <p className="text-slate-600 italic">"{incident.reviewer_notes}"</p>
-              )}
-              {incident.exemplar_created_id && (
-                <p className="text-[11px] text-cyan-800 font-mono font-bold mt-1">
-                  ✓ Recorded into Exemplar Vector Store as ID: {incident.exemplar_created_id}
-                </p>
-              )}
+          {/* Past Officer Reviews */}
+          {incident.review_status !== 'pending' && incident.review_status !== 'Pending Review' && (
+            <div className="mt-6 pt-6 border-t border-slate-200">
+              <h4 className="text-xs font-black uppercase tracking-wider text-slate-700 mb-3 flex items-center space-x-2">
+                <UserCheck className="w-4 h-4 text-slate-500" />
+                <span>Past Officer Reviews (Historical Context)</span>
+              </h4>
+              <div className="bg-slate-50 border border-slate-300 rounded-xl p-4 text-xs shadow-sm">
+                <div className="flex justify-between items-start mb-2">
+                  <div>
+                    <span className="text-slate-900 font-black block text-sm">{incident.reviewer_name || "Unknown Officer"}</span>
+                    <span className="text-slate-500 font-medium">Decision: <strong className="text-slate-800">{incident.review_status.toUpperCase()}</strong></span>
+                  </div>
+                  {incident.reviewer_override_category && (
+                    <span className="px-2 py-1 bg-rose-100 text-rose-800 border border-rose-200 rounded font-bold text-[10px] uppercase">
+                      Override: {incident.reviewer_override_category}
+                    </span>
+                  )}
+                </div>
+                {incident.reviewer_notes && (
+                  <div className="bg-white p-3 rounded-lg border border-slate-200 mt-2">
+                    <p className="text-slate-700 font-medium italic">"{incident.reviewer_notes}"</p>
+                  </div>
+                )}
+                {incident.exemplar_created_id && (
+                  <p className="text-[10px] text-slate-500 font-mono font-bold mt-3 border-t border-slate-200 pt-2">
+                    ✓ Feedback Loop: Recorded into Exemplar Vector Store as [{incident.exemplar_created_id}]
+                  </p>
+                )}
+              </div>
             </div>
           )}
         </div>

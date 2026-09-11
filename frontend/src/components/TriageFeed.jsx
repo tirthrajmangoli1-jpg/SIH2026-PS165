@@ -228,9 +228,9 @@ export default function TriageFeed({
                       <td className="py-4 px-5 whitespace-nowrap">
                         <p className="font-black text-slate-900 text-sm">{item.facility}</p>
                         <p className="text-[11px] text-slate-500 font-medium">{item.location} · {item.date_reported}</p>
-                        <p className="mt-1.5 inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold tracking-wide uppercase bg-slate-100 text-slate-600 border border-slate-300">
+                        <button onClick={(e) => { e.stopPropagation(); onOpenContext && onOpenContext(item); }} title="Click to view historical context & authenticity" className="mt-1.5 inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold tracking-wide uppercase bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-300 cursor-pointer transition">
                            Source: {item.dataset_source || "Historical Database"}
-                        </p>
+                        </button>
                       </td>
 
                       {/* Hazard, Raw Text, & AI Rationale Preview */}

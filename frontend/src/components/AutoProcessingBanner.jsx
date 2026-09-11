@@ -45,13 +45,13 @@ export default function AutoProcessingBanner({ latestProcessed }) {
     <div className="bg-white border border-slate-200 rounded-2xl p-5 mb-6 shadow-sm">
       <div className="flex flex-wrap items-center justify-between mb-3.5 gap-2">
         <div className="flex items-center space-x-2">
-          <div className="w-6 h-6 rounded-lg bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-700">
+          <div className="w-6 h-6 rounded-lg bg-amber-100 border border-amber-300 flex items-center justify-center text-slate-600">
             <Cpu className="w-3.5 h-3.5" />
           </div>
           <span className="text-xs font-black text-slate-800 uppercase tracking-wider">
             Pipeline Execution Monitor
           </span>
-          <span className="font-mono text-xs font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+          <span className="font-mono text-xs font-bold text-slate-600 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
             {latestProcessed.id}
           </span>
         </div>

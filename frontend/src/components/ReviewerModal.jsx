@@ -36,12 +36,12 @@ export default function ReviewerModal({ incident, onClose, onReviewSubmitted }) 
         {/* Header */}
         <div className="p-6 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-2xl bg-amber-100 text-amber-800 border border-amber-300 flex items-center justify-center shadow-xs">
+            <div className="w-10 h-10 rounded-2xl bg-slate-200 text-slate-800 border border-slate-300 flex items-center justify-center shadow-xs">
               <UserCheck className="w-5 h-5" />
             </div>
             <div>
               <h3 className="text-sm font-black text-slate-900">
-                Safety Officer Review Decision
+                Formal HSE Officer Review & Sign-Off
               </h3>
               <p className="text-xs text-slate-500 font-medium">
                 Incident Ref: <span className="font-mono text-slate-900 font-bold">{incident.id}</span> ({incident.facility})
@@ -81,7 +81,7 @@ export default function ReviewerModal({ incident, onClose, onReviewSubmitted }) 
               required
               value={reviewerName}
               onChange={(e) => setReviewerName(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500"
+              className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-500/30 focus:border-slate-500"
             />
           </div>
 
@@ -108,11 +108,11 @@ export default function ReviewerModal({ incident, onClose, onReviewSubmitted }) 
                 onClick={() => setAction('override')}
                 className={`p-3.5 rounded-2xl border text-xs font-black flex flex-col items-center space-y-1.5 transition ${
                   action === 'override'
-                    ? 'bg-amber-50 border-amber-500 text-amber-950 ring-2 ring-amber-300 shadow-xs'
+                    ? 'bg-amber-50 border-amber-500 text-slate-900 ring-2 ring-amber-300 shadow-xs'
                     : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100'
                 }`}
               >
-                <ArrowUpRight className="w-5 h-5 text-amber-600" />
+                <ArrowUpRight className="w-5 h-5 text-slate-600" />
                 <span>Override Classification</span>
               </button>
             </div>
@@ -120,8 +120,8 @@ export default function ReviewerModal({ incident, onClose, onReviewSubmitted }) 
 
           {/* Override Details */}
           {action === 'override' && (
-            <div className="bg-amber-50/80 border border-amber-300 p-4.5 rounded-2xl space-y-4 shadow-2xs">
-              <div className="flex items-start space-x-2 text-xs text-amber-950 font-medium">
+            <div className="bg-slate-50 border border-slate-300 p-4.5 rounded-2xl space-y-4 shadow-2xs">
+              <div className="flex items-start space-x-2 text-xs text-slate-900 font-medium">
                 <Database className="w-4 h-4 text-cyan-700 shrink-0 mt-0.5" />
                 <span>
                   <strong>Live Vector Feedback:</strong> Overriding writes this incident and rationale directly into the versioned Exemplar Vector Store, improving future Stage B similarity retrieval without retraining!
@@ -164,7 +164,7 @@ export default function ReviewerModal({ incident, onClose, onReviewSubmitted }) 
                   step="0.01"
                   value={overrideScore}
                   onChange={(e) => setOverrideScore(e.target.value)}
-                  className="w-full accent-amber-500 cursor-pointer"
+                  className="w-full accent-slate-700 cursor-pointer"
                 />
               </div>
             </div>
@@ -181,7 +181,7 @@ export default function ReviewerModal({ incident, onClose, onReviewSubmitted }) 
               placeholder={action === 'override' ? "Explain why energy level or barrier degradation dictates this change..." : "Optional verification comments..."}
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs font-medium text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500"
+              className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs font-medium text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-500/30 focus:border-slate-500"
             />
           </div>
 

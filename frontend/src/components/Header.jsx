@@ -4,7 +4,8 @@ import {
   BarChart3, ListFilter, ShieldCheck, Radio, Globe, Languages 
 } from 'lucide-react';
 
-export default function Header({ 
+export default function Header({
+  onOpenReviewHistory, 
   activeTab, 
   setActiveTab, 
   stats, 
@@ -105,7 +106,7 @@ export default function Header({
                 onClick={() => setActiveTab('triage')}
                 className={`flex items-center space-x-1.5 px-3.5 py-1.5 rounded-md text-xs font-bold transition ${
                   activeTab === 'triage'
-                    ? 'bg-amber-500 text-slate-950 shadow-sm'
+                    ? 'bg-slate-800 text-white shadow-sm'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
                 }`}
               >
@@ -116,7 +117,7 @@ export default function Header({
                 onClick={() => setActiveTab('patterns')}
                 className={`flex items-center space-x-1.5 px-3.5 py-1.5 rounded-md text-xs font-bold transition ${
                   activeTab === 'patterns'
-                    ? 'bg-amber-500 text-slate-950 shadow-sm'
+                    ? 'bg-slate-800 text-white shadow-sm'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
                 }`}
               >
@@ -131,7 +132,7 @@ export default function Header({
               title="Industry Standards & AI Model Calibration Hub"
               className="px-3 py-1.5 rounded-lg border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold text-xs flex items-center space-x-1.5 transition shadow-xs"
             >
-              <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+              <Sparkles className="w-3.5 h-3.5 text-slate-500" />
               <span>AI Training & Standards</span>
             </button>
 
@@ -141,7 +142,7 @@ export default function Header({
               title="View Regional Language to English Translation Pipeline"
               className="px-3 py-1.5 rounded-lg border border-indigo-300 bg-indigo-50 hover:bg-indigo-100 text-indigo-800 font-bold text-xs flex items-center space-x-1.5 transition shadow-xs"
             >
-              <Languages className="w-3.5 h-3.5 text-indigo-600" />
+              <Languages className="w-3.5 h-3.5 text-slate-500" />
               <span>NLP Intake Log</span>
             </button>
 
@@ -171,7 +172,7 @@ export default function Header({
               title="Reset Database to Calibrated Demo Dataset"
               className="p-1.5 rounded-lg border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-600 hover:text-slate-900 transition shadow-xs"
             >
-              <RefreshCw className={`w-4 h-4 ${isLoading ? 'animate-spin text-amber-600' : ''}`} />
+              <RefreshCw className={`w-4 h-4 ${isLoading ? 'animate-spin text-slate-500' : ''}`} />
             </button>
           </div>
         </div>

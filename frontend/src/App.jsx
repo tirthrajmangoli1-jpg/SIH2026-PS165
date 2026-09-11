@@ -9,6 +9,8 @@ import PatternDashboard from './components/PatternDashboard';
 import ReportIntakeModal from './components/ReportIntakeModal';
 import ExemplarStoreModal from './components/ExemplarStoreModal';
 import IntakeLogModal from './components/IntakeLogModal';
+import HistoricalContextModal from './components/HistoricalContextModal';
+import ReviewHistoryModal from './components/ReviewHistoryModal';
 import TrainingHubModal from './components/TrainingHubModal';
 
 import { 
@@ -34,6 +36,8 @@ export default function App() {
   const [showExemplarModal, setShowExemplarModal] = useState(false);
   const [showSecurityModal, setShowSecurityModal] = useState(false);
   const [showTrainingModal, setShowTrainingModal] = useState(false);
+  const [contextIncident, setContextIncident] = useState(null);
+  const [showReviewHistory, setShowReviewHistory] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [notification, setNotification] = useState(null);
 
@@ -209,6 +213,7 @@ export default function App() {
         onOpenExemplars={() => setShowExemplarModal(true)}
         onOpenSecurityVault={() => setShowSecurityModal(true)}
         onOpenTrainingHub={() => setShowTrainingModal(true)}
+        onOpenReviewHistory={() => setShowReviewHistory(true)}
         selectedDataset={selectedDataset}
         onSelectDataset={handleSelectDataset}
         availableDatasets={availableDatasets}
@@ -227,6 +232,7 @@ export default function App() {
           <TriageFeed
             incidents={incidents}
             onSelectIncident={(inc) => setSelectedIncident(inc)}
+            onOpenContext={(inc) => setContextIncident(inc)}
             onReviewIncident={(inc) => setReviewingIncident(inc)}
             selectedId={selectedIncident?.id}
           />
@@ -248,6 +254,7 @@ export default function App() {
           incident={selectedIncident}
           onClose={() => setSelectedIncident(null)}
           onOpenReview={(inc) => setReviewingIncident(inc)}
+          onOpenContext={(inc) => setContextIncident(inc)}
         />
       )}
 
@@ -290,6 +297,8 @@ export default function App() {
           onTrainingCompleted={() => showToast("AI Model successfully calibrated over industry standards!", "success")}
         />
       )}
+      {contextIncident && <HistoricalContextModal incident={contextIncident} onClose={() => setContextIncident(null)} />}
+      {showReviewHistory && <ReviewHistoryModal incidents={incidents} onClose={() => setShowReviewHistory(false)} onSelectIncidentId={(id) => { const inc = incidents.find(i => i.id === id); if (inc) setSelectedIncident(inc); }} />}
     </div>
   );
 }
