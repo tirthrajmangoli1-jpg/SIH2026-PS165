@@ -81,7 +81,44 @@ CODE_SWITCH_GLOSSARY: Dict[str, Dict[str, str]] = {
     # Fluids & Atmospheric
     "hawa": {"english": "gas venting / atmospheric vapor", "lang": "Hindi/Assamese"},
     "tel": {"english": "crude oil", "lang": "Hindi/Assamese"},
-    "pani": {"english": "drilling fluid wash / water", "lang": "Hindi/Assamese"}
+    "pani": {"english": "drilling fluid wash / water", "lang": "Hindi/Assamese"},
+
+    # ─── Kannada Code-Switching (Used in Karnataka O&G / ONGC Hazira / Refinery workers) ───
+    "hegide": {"english": "how is it / how was it done", "lang": "Kannada"},
+    "aalasya": {"english": "laziness / skipped safety step", "lang": "Kannada"},
+    "aparadha": {"english": "violation / fault / negligence", "lang": "Kannada"},
+    "upaya": {"english": "workaround / jugaad bypass", "lang": "Kannada"},
+    "ashta": {"english": "eight / shift number (common in Kannada rig log)", "lang": "Kannada"},
+    "samaya": {"english": "time / shift timing", "lang": "Kannada"},
+    "bittu": {"english": "left behind / abandoned equipment", "lang": "Kannada"},
+    "bidditu": {"english": "it fell down / object dropped", "lang": "Kannada"},
+    "gottilla": {"english": "did not know / unaware of hazard", "lang": "Kannada"},
+    "aaythu": {"english": "it happened / incident occurred", "lang": "Kannada"},
+    "hodi": {"english": "hit / struck", "lang": "Kannada"},
+    "hoditu": {"english": "it struck / it hit someone", "lang": "Kannada"},
+    "kela": {"english": "below / underneath the platform", "lang": "Kannada"},
+    "mele": {"english": "above / at height / on top", "lang": "Kannada"},
+    "bayalli": {"english": "outside / in the open area", "lang": "Kannada"},
+    "olage": {"english": "inside / confined space entry", "lang": "Kannada"},
+    "tappa": {"english": "escaped / narrowly avoided injury", "lang": "Kannada"},
+    "tappisikondaru": {"english": "narrowly escaped / near miss indicator", "lang": "Kannada"},
+    "beeki": {"english": "fire / open flame", "lang": "Kannada"},
+    "usiru": {"english": "breath / oxygen / atmosphere check", "lang": "Kannada"},
+    "odedaru": {"english": "broke / ruptured / snapped", "lang": "Kannada"},
+    "sigutilla": {"english": "permit not obtained / missing authorization", "lang": "Kannada"},
+    "sigalilla": {"english": "not received / not given (PTW not issued)", "lang": "Kannada"},
+    "yentu": {"english": "what happened / incident description start", "lang": "Kannada"},
+
+    # ─── Extended Assamese Regional Terms ───
+    "hobo pare": {"english": "could have happened / near miss warning", "lang": "Assamese"},
+    "khub khatra": {"english": "very high danger / extreme hazard", "lang": "Assamese"},
+    "kela mara": {"english": "fell down / dropped object", "lang": "Assamese"},
+    "pora gol": {"english": "fell into / person entered pit", "lang": "Assamese"},
+    "ulai gol": {"english": "overflowed / spilled over", "lang": "Assamese"},
+    "mati khahi": {"english": "ground gave way / soil collapse", "lang": "Assamese"},
+    "gol gol": {"english": "rotating part / rotating equipment entanglement", "lang": "Assamese"},
+    "jalinu": {"english": "burning / on fire", "lang": "Assamese"},
+    "dhuan": {"english": "smoke / gas cloud visible", "lang": "Assamese/Hindi"}
 }
 
 class PreprocessingResult:

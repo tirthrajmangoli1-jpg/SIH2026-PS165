@@ -3,25 +3,25 @@ import { X, Upload, FileText, CheckCircle2, Sparkles, AlertCircle } from 'lucide
 
 const SAMPLE_TEMPLATES = [
   {
-    title: "Near-Miss Dropped Bushing (0 Injury)",
-    facility: "Rig OIL-04",
-    location: "Moran Field",
+    title: "High SIF: Kannada Rig Floor Code-Switching",
+    facility: "ONGC Hazira Rig",
+    location: "Hazira Offshore",
     outcome: "Near Miss / No Injury",
-    text: "During tripping out at Rig OIL-04, the 85 kg Kelly bushing detached from the hoist hook at 14 meters elevation and crashed down onto the rig floor drill collar rack. The khalasi bach goli [roughneck narrowly escaped] by stepping backwards 2 seconds earlier. Hoist safety latch pin was sheared. Zero injury."
+    text: "During tripping out, a heavy drill collar bidditu (dropped) from the monkey board. The khalasi kela (below) on the rig floor tappisikondaru (narrowly escaped) by stepping back. Aalasya (laziness) to use proper sling tying was noted. No physical injury, but very high potential for fatality."
   },
   {
-    title: "H2S Cellar Pit Entry (0 Injury)",
+    title: "High SIF: Assamese Confined Space / H2S",
     facility: "Moran Production Station",
-    location: "Moran",
-    outcome: "Near Miss / No Injury",
-    text: "At Moran GGS cellar pit, a thekedaar worker entered the 3.5m deep chatai without obtaining a valid PTW or conducting an atmospheric gas test with explosimeter. Felt dizzy from H2S hawa and scrambled out. Standby sentry and SCBA were absent. Zero reported injury."
+    location: "Upper Assam",
+    outcome: "First Aid",
+    text: "At Moran GGS, a thekedaar worker went into the 3m deep gorto (pit) without an H2S monitor or PTW. He felt dizzy from toxic hawa (gas vapor) and scrambled out. Standby sentry was missing. Bach goli (narrowly escaped), but suffered minor knee chot (injury)."
   },
   {
-    title: "Routine Office Slip (Reported First Aid)",
+    title: "Low SIF: Routine Slip/Trip",
     facility: "Administrative Building",
-    location: "Duliajan Headquarters",
+    location: "Duliajan HQ",
     outcome: "First Aid",
-    text: "An executive clerk in the Finance & Accounts section received a minor 1 cm paper cut on the left index finger while unboxing newly delivered audit ledger files. Antiseptic wipe and adhesive bandage applied by camp first aider."
+    text: "An executive clerk received a minor paper cut while unboxing newly delivered audit ledger files. Antiseptic wipe applied."
   }
 ];
 
