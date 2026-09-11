@@ -285,7 +285,7 @@ export default function PatternDashboard({ patterns, onSelectTheme, onSelectInci
                 const isHighDensity = site.sif_density_pct >= 50;
                 return (
                   <button 
-                    onClick={() => onSelectIncidentId && act.sample_incident_ids && act.sample_incident_ids.length > 0 && onSelectIncidentId(act.sample_incident_ids[0])}
+                    onClick={() => onSelectIncidentId && site.sample_incident_ids && site.sample_incident_ids.length > 0 && onSelectIncidentId(site.sample_incident_ids[0])}
                     key={idx}
                     className={`text-left w-full cursor-pointer rounded-2xl p-5 border transition ${
                       isHighDensity 
@@ -349,11 +349,11 @@ export default function PatternDashboard({ patterns, onSelectTheme, onSelectInci
                         <p className="text-slate-300 text-xs font-medium leading-relaxed mt-0.5">{site.recommended_hse_action}</p>
                       </div>
                     </div>
-                    {act.sample_incident_ids && act.sample_incident_ids.length > 0 && (
+                    {site.sample_incident_ids && site.sample_incident_ids.length > 0 && (
                       <div className="mt-2.5 p-2 bg-slate-900 rounded-xl border border-slate-800 flex items-center justify-between text-[11px]">
                         <span className="font-bold text-slate-500 uppercase tracking-wider">Related Logs:</span>
                         <div className="flex gap-1.5">
-                          {act.sample_incident_ids.map(id => (
+                          {site.sample_incident_ids.map(id => (
                             <span key={id} className="px-2 py-0.5 rounded bg-slate-800 text-slate-200 hover:bg-slate-300 transition font-mono cursor-pointer underline">{id.substring(0,8)}</span>
                           ))}
                         </div>

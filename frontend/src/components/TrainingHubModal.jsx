@@ -217,6 +217,7 @@ export default function TrainingHubModal({ onClose, onTrainingCompleted }) {
                         <option value={3}>3 Epochs</option>
                         <option value={5}>5 Epochs</option>
                         <option value={10}>10 Epochs</option>
+                        <option value={200}>200 Epochs (Deep Calibrate)</option>
                       </select>
                     </div>
 
