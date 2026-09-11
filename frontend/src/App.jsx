@@ -191,12 +191,12 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-amber-100 selection:text-amber-900 font-sans antialiased">
+    <div className="min-h-screen flex flex-col bg-slate-900 text-slate-100 selection:bg-amber-900/40 selection:text-amber-300 font-sans antialiased">
       <GovtTicker />
       {/* Toast Notification */}
       {notification && (
         <div className="fixed bottom-6 right-6 z-50 animate-bounce">
-          <div className="bg-white border border-slate-300 shadow-xl rounded-xl px-4 py-3 text-xs font-semibold text-slate-800 flex items-center space-x-2.5">
+          <div className="bg-slate-950 border border-slate-700 shadow-xl rounded-xl px-4 py-3 text-xs font-semibold text-slate-200 flex items-center space-x-2.5">
             <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping" />
             <span>{notification.message}</span>
           </div>

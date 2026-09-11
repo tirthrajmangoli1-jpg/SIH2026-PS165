@@ -60,15 +60,15 @@ export default function ReportIntakeModal({ onClose, onReportIngested }) {
 
   return (
     <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="bg-white border border-slate-300 rounded-3xl w-full max-w-2xl shadow-2xl overflow-hidden">
+      <div className="bg-slate-950 border border-slate-700 rounded-3xl w-full max-w-2xl shadow-2xl overflow-hidden">
         {/* Header */}
-        <div className="p-6 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
+        <div className="p-6 border-b border-slate-800 bg-slate-900 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-2xl bg-sky-100 text-sky-800 border border-sky-300 flex items-center justify-center shadow-xs">
+            <div className="w-10 h-10 rounded-2xl bg-sky-900/40 text-sky-400 border border-sky-800/50 flex items-center justify-center shadow-none">
               <Upload className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-sm font-black text-slate-900">
+              <h3 className="text-sm font-black text-slate-100">
                 Layer 1: Safety Incident Intake Feed
               </h3>
               <p className="text-xs text-slate-500 font-medium">
@@ -76,7 +76,7 @@ export default function ReportIntakeModal({ onClose, onReportIngested }) {
               </p>
             </div>
           </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-900 p-1.5 rounded-xl bg-white border border-slate-200">
+          <button onClick={onClose} className="text-slate-400 hover:text-slate-100 p-1.5 rounded-xl bg-slate-950 border border-slate-800">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -85,7 +85,7 @@ export default function ReportIntakeModal({ onClose, onReportIngested }) {
         <form onSubmit={handleSubmit} className="p-6 space-y-5">
           {/* Quick Pre-fill Templates */}
           <div>
-            <span className="text-xs font-bold text-slate-700 uppercase tracking-wider block mb-2">
+            <span className="text-xs font-bold text-slate-300 uppercase tracking-wider block mb-2">
               Quick Test Templates (Click to Populate)
             </span>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
@@ -94,9 +94,9 @@ export default function ReportIntakeModal({ onClose, onReportIngested }) {
                   type="button"
                   key={i}
                   onClick={() => applyTemplate(tpl)}
-                  className="p-3 text-left rounded-xl bg-slate-50 border border-slate-200 hover:border-amber-400 hover:bg-amber-50/50 text-slate-800 text-xs transition shadow-2xs"
+                  className="p-3 text-left rounded-xl bg-slate-900 border border-slate-800 hover:border-amber-400 hover:bg-amber-950/30/50 text-slate-200 text-xs transition shadow-none"
                 >
-                  <span className="font-bold text-slate-900 block truncate">{tpl.title}</span>
+                  <span className="font-bold text-slate-100 block truncate">{tpl.title}</span>
                   <span className="text-[10px] text-slate-500 block font-medium mt-0.5">{tpl.outcome}</span>
                 </button>
               ))}
@@ -105,7 +105,7 @@ export default function ReportIntakeModal({ onClose, onReportIngested }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
             <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">
+              <label className="block text-xs font-bold text-slate-300 mb-1">
                 Asset / Rig Facility
               </label>
               <input
@@ -114,11 +114,11 @@ export default function ReportIntakeModal({ onClose, onReportIngested }) {
                 value={facility}
                 onChange={(e) => setFacility(e.target.value)}
                 placeholder="e.g. Rig OIL-04"
-                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500"
+                className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-xs font-semibold text-slate-100 focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500"
               />
             </div>
             <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">
+              <label className="block text-xs font-bold text-slate-300 mb-1">
                 Field Location
               </label>
               <input
@@ -127,17 +127,17 @@ export default function ReportIntakeModal({ onClose, onReportIngested }) {
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 placeholder="e.g. Moran Field"
-                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500"
+                className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-xs font-semibold text-slate-100 focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500"
               />
             </div>
             <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">
+              <label className="block text-xs font-bold text-slate-300 mb-1">
                 Reported Actual Outcome
               </label>
               <select
                 value={outcome}
                 onChange={(e) => setOutcome(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-300 text-slate-900 font-semibold rounded-xl px-3.5 py-2 text-xs focus:outline-none focus:border-amber-500"
+                className="w-full bg-slate-900 border border-slate-700 text-slate-100 font-semibold rounded-xl px-3.5 py-2 text-xs focus:outline-none focus:border-amber-500"
               >
                 <option value="Near Miss / No Injury">Near Miss / No Injury</option>
                 <option value="First Aid">First Aid</option>
@@ -151,7 +151,7 @@ export default function ReportIntakeModal({ onClose, onReportIngested }) {
           {/* Incident Text */}
           <div>
             <div className="flex justify-between items-center mb-1.5">
-              <label className="block text-xs font-bold text-slate-700">
+              <label className="block text-xs font-bold text-slate-300">
                 Incident Description Text (Field Narrative)
               </label>
               <span className="text-[10px] text-purple-700 font-bold bg-purple-50 px-2 py-0.5 rounded border border-purple-200">
@@ -164,7 +164,7 @@ export default function ReportIntakeModal({ onClose, onReportIngested }) {
               placeholder="Describe incident: operations in progress, equipment, energy sources, barriers, and line of fire..."
               value={rawText}
               onChange={(e) => setRawText(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs font-medium text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 font-mono leading-relaxed"
+              className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs font-medium text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 font-mono leading-relaxed"
             />
           </div>
 
@@ -173,7 +173,7 @@ export default function ReportIntakeModal({ onClose, onReportIngested }) {
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 rounded-xl text-xs font-bold text-slate-500 hover:text-slate-800"
+              className="px-4 py-2 rounded-xl text-xs font-bold text-slate-500 hover:text-slate-200"
             >
               Cancel
             </button>

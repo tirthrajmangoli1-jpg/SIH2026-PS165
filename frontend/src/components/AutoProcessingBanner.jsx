@@ -13,7 +13,7 @@ export default function AutoProcessingBanner({ latestProcessed }) {
         ? `Code-Switch: ${latestProcessed.detected_codeswitch[0].original_phrase}`
         : "Domain Lexicon Applied",
       done: true,
-      color: "border-sky-300 bg-sky-50 text-sky-900"
+      color: "border-sky-800/50 bg-sky-950/30 text-sky-300"
     },
     {
       name: "2. Feature Extraction",
@@ -26,8 +26,8 @@ export default function AutoProcessingBanner({ latestProcessed }) {
       detail: latestProcessed.stage_a_flagged ? "Flagged (High Recall)" : "Screened Out",
       done: true,
       color: latestProcessed.stage_a_flagged 
-        ? "border-amber-300 bg-amber-50 text-amber-900 font-bold" 
-        : "border-slate-200 bg-slate-50 text-slate-600"
+        ? "border-amber-800/50 bg-amber-950/30 text-amber-300 font-bold" 
+        : "border-slate-800 bg-slate-900 text-slate-400"
     },
     {
       name: "4. Stage B Rubric LLM",
@@ -36,27 +36,27 @@ export default function AutoProcessingBanner({ latestProcessed }) {
         : "Bypassed (Not Flagged)",
       done: latestProcessed.stage_b_executed,
       color: latestProcessed.sif_potential_category === "High SIF Potential"
-        ? "border-red-300 bg-red-50 text-red-900 font-extrabold"
-        : "border-emerald-300 bg-emerald-50 text-emerald-900 font-bold"
+        ? "border-red-800/50 bg-red-950/30 text-red-300 font-extrabold"
+        : "border-emerald-800/50 bg-emerald-950/30 text-emerald-300 font-bold"
     }
   ];
 
   return (
-    <div className="bg-white border border-slate-200 rounded-2xl p-5 mb-6 shadow-sm">
+    <div className="bg-slate-950 border border-slate-800 rounded-2xl p-5 mb-6 shadow-none">
       <div className="flex flex-wrap items-center justify-between mb-3.5 gap-2">
         <div className="flex items-center space-x-2">
-          <div className="w-6 h-6 rounded-lg bg-amber-100 border border-amber-300 flex items-center justify-center text-slate-600">
+          <div className="w-6 h-6 rounded-lg bg-amber-900/40 border border-amber-800/50 flex items-center justify-center text-slate-400">
             <Cpu className="w-3.5 h-3.5" />
           </div>
-          <span className="text-xs font-black text-slate-800 uppercase tracking-wider">
+          <span className="text-xs font-black text-slate-200 uppercase tracking-wider">
             Pipeline Execution Monitor
           </span>
-          <span className="font-mono text-xs font-bold text-slate-600 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+          <span className="font-mono text-xs font-bold text-slate-400 bg-amber-950/30 px-2 py-0.5 rounded border border-amber-800/50">
             {latestProcessed.id}
           </span>
         </div>
         <span className="text-xs text-slate-500 font-medium">
-          Target Asset: <strong className="text-slate-800 font-bold">{latestProcessed.facility}</strong> ({latestProcessed.location})
+          Target Asset: <strong className="text-slate-200 font-bold">{latestProcessed.facility}</strong> ({latestProcessed.location})
         </span>
       </div>
 
@@ -64,7 +64,7 @@ export default function AutoProcessingBanner({ latestProcessed }) {
         {stages.map((stage, idx) => (
           <div 
             key={idx} 
-            className={`flex items-start space-x-3 p-3.5 rounded-xl border ${stage.color} shadow-xs transition`}
+            className={`flex items-start space-x-3 p-3.5 rounded-xl border ${stage.color} shadow-none transition`}
           >
             <div className="mt-0.5">
               {stage.done ? (
@@ -74,8 +74,8 @@ export default function AutoProcessingBanner({ latestProcessed }) {
               )}
             </div>
             <div className="min-w-0 flex-1">
-              <p className="text-xs font-black text-slate-900 truncate">{stage.name}</p>
-              <p className="text-[11px] text-slate-600 truncate mt-0.5 font-medium">{stage.detail}</p>
+              <p className="text-xs font-black text-slate-100 truncate">{stage.name}</p>
+              <p className="text-[11px] text-slate-400 truncate mt-0.5 font-medium">{stage.detail}</p>
             </div>
           </div>
         ))}

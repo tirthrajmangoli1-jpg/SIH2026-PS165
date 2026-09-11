@@ -45,15 +45,15 @@ export default function HistoricalContextModal({ incident, onClose }) {
 
   return (
     <div className="fixed inset-0 z-[60] bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="bg-white border border-slate-300 rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden flex flex-col">
+      <div className="bg-slate-950 border border-slate-700 rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden flex flex-col">
         {/* Header */}
-        <div className="p-5 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
+        <div className="p-5 border-b border-slate-800 bg-slate-900 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-slate-200 text-slate-800 border border-slate-300 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-xl bg-slate-800 text-slate-200 border border-slate-700 flex items-center justify-center">
               <BookOpen className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-sm font-black text-slate-900 uppercase">
+              <h3 className="text-sm font-black text-slate-100 uppercase">
                 Historical Context Verification
               </h3>
               <p className="text-xs text-slate-500 font-medium">
@@ -61,16 +61,16 @@ export default function HistoricalContextModal({ incident, onClose }) {
               </p>
             </div>
           </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-900 p-1.5 rounded-lg bg-white border border-slate-200">
+          <button onClick={onClose} className="text-slate-400 hover:text-slate-100 p-1.5 rounded-lg bg-slate-950 border border-slate-800">
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Body */}
-        <div className="p-6 bg-white space-y-6">
-          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
-            <h4 className="font-black text-lg text-slate-900 mb-2">{contextData.title}</h4>
-            <p className="text-sm text-slate-700 leading-relaxed">
+        <div className="p-6 bg-slate-950 space-y-6">
+          <div className="bg-slate-900 rounded-xl p-4 border border-slate-800">
+            <h4 className="font-black text-lg text-slate-100 mb-2">{contextData.title}</h4>
+            <p className="text-sm text-slate-300 leading-relaxed">
               {contextData.description}
             </p>
           </div>
@@ -78,8 +78,8 @@ export default function HistoricalContextModal({ incident, onClose }) {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center space-x-2 text-sm">
               <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-              <span className="font-bold text-slate-800">Authenticity:</span>
-              <span className="text-slate-600 font-medium">{contextData.authenticity}</span>
+              <span className="font-bold text-slate-200">Authenticity:</span>
+              <span className="text-slate-400 font-medium">{contextData.authenticity}</span>
             </div>
             <a 
               href={contextData.source_link} 
@@ -92,10 +92,10 @@ export default function HistoricalContextModal({ incident, onClose }) {
             </a>
           </div>
 
-          <div className="pt-4 border-t border-slate-200">
-            <div className="flex items-start space-x-3 p-3 bg-amber-50 rounded-lg border border-amber-200">
+          <div className="pt-4 border-t border-slate-800">
+            <div className="flex items-start space-x-3 p-3 bg-amber-950/30 rounded-lg border border-amber-800/50">
               <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-              <p className="text-xs text-amber-900 font-medium">
+              <p className="text-xs text-amber-300 font-medium">
                 <strong>Why this matters:</strong> SIH 2026 Problem Statement 165 requires the AI engine to detect SIF precursors. By benchmarking the AI against real historical tragedies (where precursors were ignored), we prove the model's efficacy in real-world environments.
               </p>
             </div>
