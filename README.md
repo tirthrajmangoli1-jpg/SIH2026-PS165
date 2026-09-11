@@ -80,3 +80,30 @@ cd /Users/tirthsmac/.gemini/antigravity/scratch/oil-sif-sentinel
 - **API Health Check:** http://localhost:8001/api/health
 
 *(Note: The frontend has been updated with a bright, spacious UI layout based on user feedback, and explicitly incorporates the AI Training & Standards interface).*
+
+---
+
+## 10. Developer Guide: How to Push to GitHub
+
+**Important Note on GitHub Authentication:**
+GitHub removed support for standard password authentication in August 2021. If you try to run `git push` and enter your GitHub password, it will fail with a `Support for password authentication was removed` error. 
+
+To push your code successfully, you must use a **Personal Access Token (PAT)** instead of a password.
+
+### Step-by-Step Guide to Pushing Code:
+1. **Create a Token on GitHub:**
+   - Go to GitHub.com and log in.
+   - Click your profile picture in the top right $\rightarrow$ **Settings**.
+   - Scroll down on the left sidebar and click **Developer settings**.
+   - Click **Personal access tokens** $\rightarrow$ **Tokens (classic)**.
+   - Click **Generate new token (classic)**.
+   - Give it a name (e.g., "MacBook Push Token").
+   - Check the box next to **`repo`** (this gives it permission to push code).
+   - Scroll down and click **Generate token**.
+   - **Copy the token generated.** (It starts with `ghp_` and acts as your new, highly secure password).
+
+2. **Push the Code in Terminal:**
+   - Open your Mac Terminal.
+   - Run the push command: `git push -u origin main`
+   - **Username:** `tirthrajmangoli1-jpg`
+   - **Password:** *[Paste the `ghp_...` token you just copied! Do NOT type your normal password]*
