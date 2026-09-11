@@ -241,6 +241,9 @@ def analyze_hazard_patterns(reports: List[Dict[str, Any]]) -> Dict[str, Any]:
         else:
             rig_counts[fac]["low_sif"] += 1
         rig_counts[fac]["total"] += 1
+        if "incident_ids" not in rig_counts[fac]:
+            rig_counts[fac]["incident_ids"] = []
+        rig_counts[fac]["incident_ids"].append(r.get("id"))
 
     rig_distribution = list(rig_counts.values())
     rig_distribution.sort(key=lambda x: x["high_sif"], reverse=True)
@@ -337,7 +340,8 @@ def analyze_hazard_patterns(reports: List[Dict[str, Any]]) -> Dict[str, Any]:
             "sif_density_pct": density,
             "dominant_iogp_rule": dominant_rule,
             "dominant_barrier_failure": dominant_barrier,
-            "recommended_hse_action": rec_action
+            "recommended_hse_action": rec_action,
+            "sample_incident_ids": data.get("incident_ids", [])[:3]
         })
         
     site_density_ranking.sort(key=lambda x: (x["sif_density_pct"], x["high_sif_count"]), reverse=True)

@@ -59,7 +59,7 @@ export default function PatternDashboard({ patterns, onSelectTheme, onSelectInci
   return (
     <div className="space-y-6">
       {/* Top Banner Explaining Unsupervised Clustering */}
-      <div className="bg-gradient-to-r from-amber-50 via-white to-sky-50 border border-slate-200 rounded-2xl p-6 shadow-sm">
+      <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <div className="flex items-center space-x-2.5">
@@ -124,6 +124,16 @@ export default function PatternDashboard({ patterns, onSelectTheme, onSelectInci
                     {cluster.facilities_impacted.join(', ')}
                   </span>
                 </div>
+                {cluster.sample_incident_ids && cluster.sample_incident_ids.length > 0 && (
+                  <div className="flex justify-between items-center mt-2 pt-2 border-t border-slate-100">
+                    <span className="font-medium text-[11px] text-slate-500">View Reports:</span>
+                    <div className="flex gap-1">
+                      {cluster.sample_incident_ids.map(id => (
+                        <button key={id} onClick={() => onSelectIncidentId && onSelectIncidentId(id)} className="px-1.5 py-0.5 rounded bg-slate-200 text-slate-700 hover:bg-slate-300 transition text-[10px] font-mono cursor-pointer underline">{id.substring(0,8)}</button>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -306,7 +316,7 @@ export default function PatternDashboard({ patterns, onSelectTheme, onSelectInci
                     <div className="w-full bg-slate-200 rounded-full h-2.5 mt-3.5 overflow-hidden">
                       <div 
                         className={`h-full rounded-full transition-all duration-500 ${
-                          isHighDensity ? 'bg-gradient-to-r from-red-600 to-amber-500' : 'bg-amber-500'
+                          isHighDensity ? 'bg-rose-500' : 'bg-amber-500'
                         }`}
                         style={{ width: `${Math.min(site.sif_density_pct, 100)}%` }}
                       />
@@ -337,6 +347,16 @@ export default function PatternDashboard({ patterns, onSelectTheme, onSelectInci
                         <p className="text-slate-700 text-xs font-medium leading-relaxed mt-0.5">{site.recommended_hse_action}</p>
                       </div>
                     </div>
+                    {site.sample_incident_ids && site.sample_incident_ids.length > 0 && (
+                      <div className="mt-2.5 p-2 bg-slate-50 rounded-xl border border-slate-100 flex items-center justify-between text-[11px]">
+                        <span className="font-bold text-slate-500 uppercase tracking-wider">Related Logs:</span>
+                        <div className="flex gap-1.5">
+                          {site.sample_incident_ids.map(id => (
+                            <button key={id} onClick={() => onSelectIncidentId && onSelectIncidentId(id)} className="px-2 py-0.5 rounded bg-slate-200 text-slate-800 hover:bg-slate-300 transition font-mono cursor-pointer underline">{id.substring(0,8)}</button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 );
               })}
@@ -384,7 +404,7 @@ export default function PatternDashboard({ patterns, onSelectTheme, onSelectInci
                     <div className="w-full bg-slate-200 rounded-full h-2.5 mt-3.5 overflow-hidden">
                       <div 
                         className={`h-full rounded-full transition-all duration-500 ${
-                          isHighDensity ? 'bg-gradient-to-r from-red-600 to-amber-500' : 'bg-amber-500'
+                          isHighDensity ? 'bg-rose-500' : 'bg-amber-500'
                         }`}
                         style={{ width: `${Math.min(act.sif_density_pct, 100)}%` }}
                       />
