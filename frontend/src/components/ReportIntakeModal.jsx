@@ -22,6 +22,62 @@ const SAMPLE_TEMPLATES = [
     location: "Duliajan HQ",
     outcome: "First Aid",
     text: "An executive clerk received a minor paper cut while unboxing newly delivered audit ledger files. Antiseptic wipe applied."
+  },
+  {
+    title: "High SIF: Hindi Native (Dropped Pipe)",
+    facility: "Bombay High",
+    location: "Offshore Platform",
+    outcome: "Near Miss / No Injury",
+    text: "ड्रिलिंग फ्लोर पर क्रेन से 2 टन का पाइप अचानक स्लिप होकर गिर गया। दो वर्कर वहां से तुरंत हट गए वरना जान जा सकती थी। किसी को चोट नहीं आई।"
+  },
+  {
+    title: "High SIF: Hinglish / Romanized Hindi (Gas Leak)",
+    facility: "Baghjan Well-5",
+    location: "Baghjan",
+    outcome: "Medical Treatment",
+    text: "Baghjan well blowout ke time pe achanak H2S gas leak shuru hua. 2 workers behosh ho gaye aur unko hospital admit karna pada. Condition stable hai."
+  },
+  {
+    title: "High SIF: Kanglish / Romanized Kannada (Crane Fail)",
+    facility: "Mangalore Refinery",
+    location: "MRPL",
+    outcome: "Lost Time Injury (LTI)",
+    text: "Crane use maduvaga wire cut aagi heavy load kavage bittu. Kelage obba worker leg mela bittu fracture aagide. Immediately hospital ge shift madidvi."
+  },
+  {
+    title: "Medium SIF: Romanized Assamese (Toxic Gas)",
+    facility: "Digboi Refinery",
+    location: "Digboi",
+    outcome: "First Aid",
+    text: "Pump room ot bishakto gas leak hoisil. Gas detector alarm baji uthil aru manuhe bhagisil. Kunuba aahot puwa nai kintu 2 jonar mukh ghuraisil."
+  },
+  {
+    title: "High SIF: Hinglish (Electrical Blast)",
+    facility: "HPCL Vizag",
+    location: "Visakhapatnam",
+    outcome: "Lost Time Injury (LTI)",
+    text: "Transformer panel switch on karte waqt blast hua. Ek electrician ko face pe minor burns aaye. Proper PPE nahi pehna tha usne."
+  },
+  {
+    title: "High SIF: Kannada Native (Fire Hazard)",
+    facility: "Rig OIL-04",
+    location: "Moran Field",
+    outcome: "Near Miss / No Injury",
+    text: "ಜನರೇಟರ್ ರೂಮಿನಲ್ಲಿ ಶಾರ್ಟ್ ಸರ್ಕ್ಯೂಟ್ ನಿಂದ ಬೆಂಕಿ ಕಾಣಿಸಿಕೊಂಡಿತು. ಕೂಡಲೇ ಅಲಾರ್ಮ್ ಬಾರಿಸಿ, ಫೈರ್ ಎಕ್ಸ್‌ಟಿಂಗ್ವಿಶರ್ ಬಳಸಿ ಬೆಂಕಿ ಆರಿಸಲಾಯಿತು. ಯಾವುದೇ ಗಾಯಗಳಿಲ್ಲ."
+  },
+  {
+    title: "High SIF: Assamese Native (Fall from Height)",
+    facility: "Jorhat GGS",
+    location: "Jorhat",
+    outcome: "Fatality",
+    text: "উচ্চ স্থানত মেৰামতি কাম কৰি থাকোঁতে চেফটি হাৰ্নেছ ছিঙি এজন ঠিকা কৰ্মী ১০ মিটাৰ তললৈ পৰি গুৰুতৰভাৱে আহত হয়। হস্পিটেল নিয়াৰ পথত তেওঁৰ মৃত্যু হয়।"
+  },
+  {
+    title: "Medium SIF: Hinglish (Confined Space)",
+    facility: "GAIL Nagaram",
+    location: "Nagaram",
+    outcome: "First Aid",
+    text: "Tank cleaning ke time vessel me proper ventilation nahi tha. Worker ko dizziness feel hua aur wo bahar aa gaya. Usse first aid di gayi."
   }
 ];
 

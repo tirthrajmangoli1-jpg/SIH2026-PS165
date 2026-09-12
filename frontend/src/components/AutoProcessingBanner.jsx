@@ -19,7 +19,7 @@ export default function AutoProcessingBanner({ latestProcessed }) {
       name: "2. Feature Extraction",
       detail: latestProcessed.hazard_type || "Energy & Barrier Features",
       done: true,
-      color: "border-blue-300 bg-blue-50 text-blue-900"
+      color: "border-indigo-800/50 bg-indigo-950/30 text-indigo-300"
     },
     {
       name: "3. Stage A Pre-Filter",

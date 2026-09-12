@@ -124,6 +124,20 @@ export default function Header({
                 <BarChart3 className="w-3.5 h-3.5" />
                 <span>Pattern Radar</span>
               </button>
+            
+            {/* Officer Decisions Tab */}
+            <button
+              onClick={() => setActiveTab('decisions')}
+              className={`flex items-center space-x-1.5 px-3.5 py-1.5 rounded-md text-xs font-bold transition ${
+                activeTab === 'decisions'
+                  ? 'bg-slate-800 text-white shadow-none'
+                  : 'text-slate-400 hover:text-slate-100 hover:bg-slate-800/60'
+              }`}
+            >
+              <ShieldCheck className="w-3.5 h-3.5" />
+              <span>Decisions</span>
+            </button>
+
             </nav>
 
             {/* Industry Parameters & AI Training Hub Button */}

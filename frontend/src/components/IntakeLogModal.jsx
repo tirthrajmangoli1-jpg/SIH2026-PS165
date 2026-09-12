@@ -3,9 +3,20 @@ import { X, Languages, FileText, ArrowRight } from 'lucide-react';
 
 export default function IntakeLogModal({ incidents, onClose }) {
   // Only show incidents that actually have code-switching detected
-  const translatedIncidents = incidents.filter(
-    (inc) => inc.detected_codeswitch && inc.detected_codeswitch.length > 0
-  );
+  const translatedIncidents = incidents
+    .filter((inc) => inc.detected_codeswitch && inc.detected_codeswitch.length > 0)
+    .sort((a, b) => {
+      // Sort from latest to oldest
+      const dateA = new Date(a.created_at || a.date_reported || 0).getTime();
+      const dateB = new Date(b.created_at || b.date_reported || 0).getTime();
+      // Secondary sort: if dates are identical (like mock data), fallback to ID parsing or score
+      if (dateA === dateB) {
+         if (a.id > b.id) return -1;
+         if (a.id < b.id) return 1;
+         return 0;
+      }
+      return dateB - dateA;
+    });
 
   return (
     <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
@@ -50,7 +61,7 @@ export default function IntakeLogModal({ incidents, onClose }) {
                       <span>Submitted: {inc.created_at ? new Date(inc.created_at).toLocaleString() : new Date().toLocaleString()}</span>
                     </span>
                   </div>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-900/40 text-indigo-400 border border-indigo-200" title="Regional terms detected and translated by NLP engine">
+                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-900/40 text-indigo-400 border border-indigo-800/50" title="Regional terms detected and translated by NLP engine">
                     Code-Switching Detected ({inc.detected_codeswitch.length} terms)
                   </span>
                 </div>
@@ -67,11 +78,11 @@ export default function IntakeLogModal({ incidents, onClose }) {
                   </div>
 
                   {/* Translated */}
-                  <div className="bg-blue-50/50 border border-blue-200 rounded-lg p-3 relative">
+                  <div className="bg-indigo-950/30 border border-indigo-800/50 rounded-lg p-3 relative">
                     <div className="hidden md:flex absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-slate-950 border border-slate-800 rounded-full items-center justify-center shadow-none z-10">
                       <ArrowRight className="w-3 h-3 text-slate-400" />
                     </div>
-                    <span className="text-[10px] uppercase font-black tracking-wider text-blue-700 block mb-1.5 flex items-center space-x-1.5">
+                    <span className="text-[10px] uppercase font-black tracking-wider text-indigo-400 block mb-1.5 flex items-center space-x-1.5">
                       <Languages className="w-3 h-3" />
                       <span>NLP Translated Output (English)</span>
                     </span>
