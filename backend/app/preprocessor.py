@@ -279,7 +279,7 @@ def clean_and_normalize_text(raw_text: str) -> PreprocessingResult:
             detected_codeswitch.append({
                 "original_phrase": cleaned[:30] + ("..." if len(cleaned) > 30 else ""),
                 "normalized_meaning": translated[:40] + ("..." if len(translated) > 40 else "") if translated else "Failed to translate",
-                "language_origin": "Auto-ML Pipeline",
+                "language_origin": "Google Cloud Translation API",
                 "count": 1
             })
         except Exception as e:
