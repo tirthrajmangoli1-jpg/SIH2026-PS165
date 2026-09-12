@@ -84,7 +84,7 @@ export default function IntakeLogModal({ incidents, onClose }) {
                     </div>
                     <span className="text-[10px] uppercase font-black tracking-wider text-indigo-400 block mb-1.5 flex items-center space-x-1.5">
                       <Languages className="w-3 h-3" />
-                      <span>Google Translated Output (Cloud ML Pipeline)</span>
+                      <span>NLP Engine Translated Output (Cloud ML Pipeline)</span>
                     </span>
                     <p className="text-xs text-slate-100 font-semibold leading-relaxed">
                       "{inc.normalized_text}"
