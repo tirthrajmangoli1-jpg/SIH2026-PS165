@@ -2,11 +2,31 @@ import React, { useState } from 'react';
 import { Search, Filter, ShieldCheck, CheckCircle2, FileText, ChevronDown, Calendar, User, MapPin } from 'lucide-react';
 import { mockDecisions } from '../mock/decisions';
 
-export default function OfficerDecisions() {
+export default function OfficerDecisions({ incidents = [] }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterStatus, setFilterStatus] = useState('All');
 
-  const filteredDecisions = mockDecisions.filter(d => {
+
+  // Parse real decisions from triage incidents
+  const realDecisions = incidents
+    .filter(i => i.review_status === "Reviewed" || i.reviewer_name)
+    .sort((a, b) => new Date(b.created_at || 0) - new Date(a.created_at || 0))
+    .map(i => ({
+      id: "DEC-" + i.id.split("-")[0],
+      incident_id: i.id,
+      officer_name: i.reviewer_name || "Assigned Officer",
+      date: new Date(i.created_at || Date.now()).toISOString().split('T')[0],
+      site: i.site_name || "Unknown Site",
+      action: i.review_action === 'override' ? `Escalate: ${i.review_sif_category || 'High SIF'}` : 'Confirmed AI Verdict',
+      comments: i.review_comments || "No justification provided.",
+      language: (i.detected_codeswitch && i.detected_codeswitch.length > 0) ? "Regional Translated" : "English",
+      status: i.review_action === 'override' ? 'Calibrated' : 'Reviewed',
+      isReal: true
+    }));
+
+  const allDecisions = [...realDecisions, ...mockDecisions];
+
+  const filteredDecisions = allDecisions.filter(d => {
     const matchesSearch = d.site.toLowerCase().includes(searchTerm.toLowerCase()) || 
                           d.incident_id.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           d.officer_name.toLowerCase().includes(searchTerm.toLowerCase());
@@ -74,7 +94,7 @@ export default function OfficerDecisions() {
               </thead>
               <tbody className="divide-y divide-slate-800/50">
                 {filteredDecisions.map(decision => (
-                  <tr key={decision.id} className="hover:bg-slate-800/20 transition group">
+                  <tr key={decision.id} className={`transition group ${decision.isReal ? 'bg-indigo-950/20 hover:bg-indigo-900/30' : 'hover:bg-slate-800/20'}`}>
                     <td className="p-4 align-top">
                       <div className="flex flex-col">
                         <span className="font-bold text-emerald-400">{decision.id}</span>

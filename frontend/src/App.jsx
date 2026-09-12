@@ -229,7 +229,7 @@ export default function App() {
         <AutoProcessingBanner latestProcessed={latestProcessed} />
 
         {/* Tab View: Screen 3 (Triage Feed) or Screen 6 (Hazard Pattern Dashboard) */}
-        {activeTab === 'triage' ? (
+        {activeTab === 'triage' && (
           <TriageFeed
             incidents={incidents}
             onSelectIncident={(inc) => setSelectedIncident(inc)}
@@ -237,7 +237,11 @@ export default function App() {
             onReviewIncident={(inc) => setReviewingIncident(inc)}
             selectedId={selectedIncident?.id}
           />
-        ) : (
+        )}
+        {activeTab === 'decisions' && (
+          <OfficerDecisions incidents={incidents} />
+        )}
+        {activeTab === 'patterns' && (
           <PatternDashboard
             patterns={patterns}
             onSelectTheme={(theme) => console.log(theme)}
